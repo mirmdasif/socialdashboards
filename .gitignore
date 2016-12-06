@@ -1,10 +1,8 @@
-.*
-!.gitignore
-*.ipr
-*.iws
+# Idea Specific
+.idea/
 *.iml
-atlassian-ide-plugin.xml
-target
-build
-out
+build/
+out/
 
+# Gradle
+.gradle/
