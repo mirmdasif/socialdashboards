@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"/>
     <title>Facebook Posts</title>
 </head>
 <body>
+
+    <h2>Hello, <span th:text = "${profile.name}">User Name</span></h2>
+
+    <h3>Here are some posts from your feed</h3>
+
+    <div th:each = "post : ${feed}">
+        By <b th:text = "${post.from.name}"> User 2</b>
+        <p th:text = "${post.message}">Message Text</p>
+        <a target="_blank" th:if = "${post.picture}" th:href = "${post.link}">
+            <img  th:src = "${post.picture}"/>
+        </a>
+        <hr/>
+    </div>
 
 </body>
 </html>
